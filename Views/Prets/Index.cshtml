@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BibliothequeVieuxMontreal.Models.Pret>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Liste des prêts</h1>
+<p>
+    <a asp-action="Create" class="btn btn-success">
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        Créer un nouveau pret
+    </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateDebut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateFin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdLivreNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMembreNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateDebut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateFin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdLivreNavigation.Titre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdMembreNavigation.Nom)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                    &nbsp;Retour
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

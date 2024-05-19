@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BibliothequeVieuxMontreal</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BibliothequeVieuxMontreal.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
+</head>
+<body>
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <i class="fa fa-building" aria-hidden="true"></i>&nbsp;
+            Bibliothèque teckup 
+        </a>
+
+        <ul class="nav col-12 col-lg-auto mb-2 justify-content-center mb-md-0 ms-5">
+            <li>
+                <a asp-area="" asp-controller="Livres" asp-action="Index" class="nav-link px-2 text-white" class="nav-link px-2 text-white">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    Livres
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Membres" asp-action="Index" class="nav-link px-2 text-white" class="nav-link px-2 text-white">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    Membres
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Prets" asp-action="Index" class="nav-link px-2 text-white" class="nav-link px-2 text-white">
+                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+                    Prets
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Retards" asp-action="Index" class="nav-link px-2 text-white" class="nav-link px-2 text-white">
+                    <i class="fa fa-calendar-times-o" aria-hidden="true"></i>
+                    Retards
+                </a>
+            </li>
+        </ul>
+
+        </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="py-5">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - BibliothequeVieuxMontreal  <!--a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a-->
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
